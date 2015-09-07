@@ -1,0 +1,8 @@
+<h1>My Projects</h1>
+
+<ul>
+	<% @projects.each do |project| %>
+	<li><%= project.title %> 
+	<br>Updated at: <%= project.updated_at.strftime("%H:%M:%S") %></li>
+	<% end %>
+</ul>
