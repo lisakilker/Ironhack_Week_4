@@ -1,0 +1,14 @@
+<h1>Lisa's Address Book</h1>
+
+<ul>
+    <% @contacts.each do |person| %>
+    <li>Name <a href="/contacts/<%= person.id %>"><%= person.name %></a>
+    <li>Email <%= person.email %>
+    <li>Address <%= person.address %>
+    <li>Phone <%= person.phone %>
+    <li>Favorite? <%= person.favorite %>
+    <h4><br></h4>
+    <% end %>
+</ul>
+
+<a href="/contacts/new">Create Contact</a>
