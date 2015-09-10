@@ -1,0 +1,17 @@
+<h1><%= @project.title %></h1>
+
+<p>
+	<%= @project.description %>
+</p>
+
+<ul>
+	<% @entries.each do |entry| %>
+	<li>
+		<%= "#{entry.project_id}: #{entry.hours} h - #{entry.minutes}" %>
+		<%= link_to "Edit Entry", edit_entry_path(entry.id) %>
+		<%= link_to("Delete", entry_path(entry), method: "DELETE", data: {confirm: "Are you sure?"}) %>
+	</li>
+	<% end %>
+</ul>
+
+<%= link_to "New Entry", new_project_entry_path(@project.id) %>
