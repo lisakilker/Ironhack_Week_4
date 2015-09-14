@@ -1,8 +1,11 @@
-<h1>My Projects</h1>
+<h1>Projects:</h1>
 
 <ul>
-	<% @projects.each do |project| %>
-	<li><%= project.title %> 
-	<br>Updated at: <%= project.updated_at.strftime("%H:%M:%S") %></li>
-	<% end %>
+    <% @projects.each do |project| %>
+    <li> <a href="http://localhost:3000/projects/<%=project.id%>"><%= project.title %></a>  // Updated at <%= project.updated_at.strftime("%H:%M:%S") %></li>
+    <% end %>
 </ul>
+
+
+<a href="/projects/new">Create Project</a>
+<a href="/projects">Show Projects</a>

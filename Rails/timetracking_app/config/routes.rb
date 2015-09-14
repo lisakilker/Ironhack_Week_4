@@ -1,8 +1,18 @@
 Rails.application.routes.draw do
-
 get '/' => 'sites#home'
 get '/contact' => 'sites#contact'
-get '/projects'  => 'projects#index'
+
+resources 'entries', only: [:edit, :update, :destroy]
+
+resources 'projects' do
+  resources 'entries', only: [:new, :create]
+end
+
+# resources 'projects', only: [:index, :create, :new, :show]
+# post 'projects' => 'projects#create'
+# get '/projects'  => 'projects#index'
+# get '/projects/new' => 'projects#new'
+# get 'projects/:id' => 'projects#show'
 end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lisa's Bookstore</title>
+	</head>
+	<body>
+		<h1>Add your Own</h1>
+		<ul>
+			<% @entries.each do |entry| %>
+			<li>
+				<%= "#{entry.product_description}: #{entry.product_ranking}" %>
+				<%= link_to "Edit Entry", edit_entry_path(entry.id) %>
+				<%= link_to "New Entry", new_product_entry_path(@product.id) %>
+			</li>
+			<% end %>
+		</ul>
+		<a href="/products/new">Add New Book</a>
+		<br>
+		<a href="/products">View All Books</a>
+	</body>
+</html>
+	
+	

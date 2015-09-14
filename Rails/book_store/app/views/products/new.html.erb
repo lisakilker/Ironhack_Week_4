@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lisa's Bookstore</title>
+	</head>
+	<body>
+		<h1>Add New Book</h1>
+		<%= form_for @product do |f| %>
+		<h3>Title: <br><%= f.text_field :product %></h3>
+		<h4>Description: <br><%= f.text_area :description %></h4>
+		<h4>Price: $<br><%= f.number_field :price %></h4>
+		<h4>Customer Ranking: <br><%= f.number_field :ranking, min: 0, max: 5 %></h4>
+		<%= f.submit "Save" %>
+		<% end %>
+		<a href="/products/new">Add New Book</a>
+		<br>
+		<a href="/products">View All Books</a>
+	</body>
+</html>

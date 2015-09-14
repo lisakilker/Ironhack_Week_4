@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Lisa's Bookstore</title>
+	</head>
+	<body>
+		<h2>Title:<br><%= @product.product %></h2>
+		<h3>Description:<br><%= @product.description %></h3>
+		<h4>Price $<%= @product.price %></h4>
+		<h4>Customer Ranking: <%= @product.ranking %></h4>
+		<br>
+		<a href="/products/:id">Add Your Own Ranking</a>
+		<a href="/products/new">Add New Book</a>
+		<br>
+		<a href="/products">View All Books</a>
+	</body>
+</html>
